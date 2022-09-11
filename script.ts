@@ -79,6 +79,26 @@ function createTask(data: Task): HTMLLIElement {
     const remaining = document.createElement("h3");
     remaining.innerHTML = diff > 0 ? humanize(diff) : "Missed";
 
+    function onMouseMove(event: MouseEvent): void {
+        newTask.style.left = event.pageX - newTask.clientWidth / 2 + "px";
+        newTask.style.transform = (window.innerWidth / 5 * 2 > event.pageX)
+            ? "rotate(22.5deg)"
+            : (window.innerWidth / 5 * 3 < event.pageX)
+                ? "rotate(-22.5deg)"
+                : "";
+    }
+    function onMouseUp(): void {
+        document.removeEventListener("mousemove", onMouseMove);
+        newTask.remove();
+        render();
+        document.removeEventListener("mouseup", onMouseUp);
+    }
+    newTask.addEventListener("mousedown", () => {
+        newTask.style.position = "absolute";
+        document.addEventListener("mousemove", onMouseMove);
+        document.addEventListener("mouseup", onMouseUp);
+    });
+
     newTask.append(title, deadline, remaining);
     return newTask;
 }
