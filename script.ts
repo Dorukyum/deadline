@@ -117,7 +117,7 @@ function load(): void {
     tasks = [];
     for (let i = 0; i < localStorage.length; i++) {
         let deadline = localStorage.key(i);
-        tasks.push({ title: localStorage.getItem(deadline), deadline: parseInt(deadline) });
+        if (!isNaN(parseInt(deadline))) tasks.push({ title: localStorage.getItem(deadline), deadline: parseInt(deadline) });
     }
     render();
 }
