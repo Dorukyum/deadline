@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "module": "system",
+        "removeComments": true,
+        "outFile": "build/script.js",
+    },
+    "include": [
+        "script.ts",
+    ],
+}
