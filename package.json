@@ -1,0 +1,24 @@
+{
+    "name": "deadline",
+    "version": "1.0.0",
+    "description": "Keep track of your tasks and never miss a deadline again",
+    "private": true,
+    "homepage": "https://dorukyum.github.io/deadline/",
+    "dependencies": {
+        "gh-pages": "^4.0.0",
+        "typescript": "^4.8.3"
+    },
+    "scripts": {
+        "build": "tsc",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Dorukyum/deadline.git"
+    },
+    "author": "Dorukyum",
+    "bugs": {
+        "url": "https://github.com/Dorukyum/deadline/issues"
+    }
+}
