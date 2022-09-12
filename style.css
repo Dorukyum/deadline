@@ -19,16 +19,26 @@ body {
 
 .task {
     width: auto;
-    min-width: 250px;
+    min-width: 275px;
     height: fit-content;
     padding: 0 15px;
     background-color: #ffbf36;
     border-radius: 10px;
     border: 30px black;
+    margin-top: 15px;
 }
 
 .task:not(#task-form) {
     cursor: grab;
+}
+
+.task h2 {
+    padding: 10px 0 10px;
+    margin: auto;
+}
+
+.task h3 {
+    padding-bottom: 10px;
 }
 
 .task.missed {
@@ -53,12 +63,14 @@ body {
     font-weight: bold;
     border-radius: 3px;
     text-align: center;
+    width: 100%;
 }
 
 #task-form input[type="submit"] {
     color: white;
     background-color: green;
     border: black 2px;
+    padding: 10px 0;
 }
 
 #clear {
