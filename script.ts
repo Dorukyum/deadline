@@ -1,4 +1,5 @@
 const listElement = document.getElementById("list");
+const clearButton = document.getElementById("clear");
 const now = Date.now();
 
 interface Task {
@@ -126,6 +127,16 @@ function render(): void {
     while (listElement.lastChild) listElement.removeChild(listElement.lastChild);
     tasks.sort((a, b) => a.deadline - b.deadline).forEach(task => listElement.appendChild(createTask(task)));
     listElement.appendChild(form);
+    if (tasks.length > 0) {
+        if (!document.body.contains(clearButton)) document.body.insertBefore(clearButton, listElement);
+    } else clearButton.remove();
 }
 
+clearButton.addEventListener("click", () => {
+    for (let task of tasks) {
+        localStorage.removeItem("" + task.deadline);
+    }
+    tasks = [];
+    render();
+});
 window.addEventListener("load", load);

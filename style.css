@@ -60,3 +60,16 @@ body {
     background-color: green;
     border: black 2px;
 }
+
+#clear {
+    font-size: large;
+    color: white;
+    background-color: #ff3636;
+    border: black 2px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#clear:hover {
+    background-color: #6e1818;
+}
