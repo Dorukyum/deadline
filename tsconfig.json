@@ -1,10 +1,25 @@
 {
     "compilerOptions": {
-        "module": "system",
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+        "module": "ESNext",
+        "baseUrl": ".",
+        "allowJs": true,
+        "checkJs": true,
         "removeComments": true,
-        "outFile": "build/script.js",
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "typeRoots": ["src/**/*.d.ts"]
     },
     "include": [
-        "script.ts",
+        "src/**/*.d.ts",
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.svelte"
     ],
+    "references": [
+        {
+            "path": "./tsconfig.node.json"
+        }
+    ]
 }

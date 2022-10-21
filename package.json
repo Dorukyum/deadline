@@ -3,13 +3,25 @@
     "version": "1.0.0",
     "description": "Keep track of your tasks and never miss a deadline again",
     "private": true,
+    "type": "module",
     "homepage": "https://dorukyum.github.io/deadline/",
     "dependencies": {
         "gh-pages": "^4.0.0",
-        "typescript": "^4.8.3"
+        "svelte": "^3.52.0"
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "^1.0.2",
+        "svelte-check": "^2.8.1",
+        "svelte-preprocess": "^4.10.7",
+        "tslib": "^2.4.0",
+        "typescript": "^4.6.4",
+        "vite": "^3.1.0"
     },
     "scripts": {
-        "build": "tsc",
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "check": "svelte-check --tsconfig ./tsconfig.json",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d ."
     },
